@@ -1,24 +1,36 @@
-//var input = "make money every day";
-//var arr = input.split(" ");
-//var len = arr.length;
-//console.log(len);
+String.prototype.count=function(c) { 
+  var result = 0, i = 0;
+  for(i;i<this.length;i++){
+    if(this[i]==c)
+      result++;
+  }
+  return result;
+};
 
+function childString(word1, word2){
+  let str_len = word2.length, result= '' ; 
 
-var a = "HARRY";
-var b = "SALLY";
-
-
-if (a.length == b.length){
-    for( i = 1; i <= a.length; i++){
-        for(j = 1; j <= b.length; j++){
-            var arr;
-            if(a[i] == b[j]){
-                arr = (a[i]);
-
-                console.log(arr);
-            }
-        }
+  if ((typeof(word1)!== 'string') || (typeof(word2)!== 'string')){
+    return 'both arguments should be strings';
+  }
+  
+  if (word2.length !== word1.length){
+    return 'words should have equal length';
+  }
+  
+  if (! /^[a-zA-Z]+$/.test(word1) || ! /^[a-zA-Z]+$/.test(word1)) {
+    return 'can only compare strings with alphabets';
+  }
+  
+  for(let i=0; i<str_len; i++){
+    if (word2.includes(word1[i])){
+      if((result.includes(word1[i])) && word2.count(word1[i]) === result.count(word1[i]) ){
+        continue;
+      }
+        result += word1[i];  
     }
-}else{
-    console.log('They are not of equal lenght');
+  }
+  return result;
 }
+
+//childString('harry', 'sally');
