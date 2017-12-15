@@ -1,20 +1,22 @@
-var a = "makeMoneyEveryDay"
-var index = 0;
-var arr = [];
-var count = 0;
-for(var i = 0;i < a.length;i++){
-
-	if(a[i] == a[i].toUpperCase()){
-		console.log(a.substr(index,i - index));
-		arr[count] = a.substr(index,i - index);
-		index = i;
-		count++;
-	}
-
+function camelCase(camelString){
+  if(camelString.length===0) return ('empty string');
+  
+  if(camelString.length>1){
+    camelString = camelString.replace(/\s+/g, '');
+  }
+	
+  let wordsArray = [], word = '';
+	
+  for(let i=0; i<camelString.length; i++){
+    if (camelString[i] === camelString[i].toLowerCase()){
+      word += camelString[i];
+      continue;
+    }
+    wordsArray.push(word); word = ''; word += camelString[i];
+  }
+  wordsArray.push(word);
+  wordsArray.unshift(wordsArray.length);
+  return wordsArray;
 }
 
-console.log(arr);
-var len = a.length;
-console.log(a.substr(index,len - 1));
-arr[count] = a.substr(index,len - 1);
-console.log(arr.length);
+camelCase('make Money Every Day');
