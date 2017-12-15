@@ -4,7 +4,6 @@
 //console.log(len);
 
 
-
 var a = "HARRY";
 var b = "SALLY";
 
