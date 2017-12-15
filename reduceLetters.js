@@ -24,7 +24,7 @@ function detect_identical(sequence){
 
    for(let i=0; i<identicals.length; i++) {
      if (identicals[i].length % 2 === 0) {
-       reduced += '';
+       continue;
      } else {
        reduced += identicals[i][0];
      }
@@ -46,7 +46,6 @@ function detect_identical(sequence){
 
  }
 
- sequence = 'abbbbbcccddd';
-//  console.log(only_victor(sequence));
-console.log(sequence);
-console.log(reducible(sequence));
+// sequence = 'abbbbbcccddd';
+// console.log(sequence);
+// console.log(reducible(sequence));
